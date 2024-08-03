@@ -4,9 +4,6 @@ services:
         build: ./frontend
         ports:
             - "3000:3000"
-        volumes:
-            - ./frontend:/app
-            - /app/node_modules
         networks:
             - my-network
 
@@ -14,11 +11,6 @@ services:
         build: ./backend
         ports:
             - "3001:3001"
-        volumes:
-            - ./backend:/app
-            - /app/node_modules
-        environment:
-            - DATABASE_URL=mysql://user:password@db:3306/mydatabase
         networks:
             - my-network
 
